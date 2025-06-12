@@ -15,7 +15,12 @@ public class Application {
 
     // Initialisation du service avec les notifiers disponibles
     static {
-        List<INotifier> notifiers = List.of(new ConsoleNotifier(), new EmailNotifier());
+        // On initialise notre liste de notifieurs.
+        // On peut garder les deux : la notification console et le vrai email !
+        List<INotifier> notifiers = List.of(
+                new ConsoleNotifier(),
+                new RealEmailNotifier() // On remplace la simulation par le vrai notifieur
+        );
         service = new NotificationService(notifiers);
     }
 
@@ -41,10 +46,8 @@ public class Application {
 
     private static void initialiserEmployes() {
         // On utilise la méthode d'ajout pour s'assurer que les ID sont bien gérés
-        creerNouvelEmploye("Alice", "alice@entreprise.com");
-        creerNouvelEmploye("Bob", "bob@entreprise.com");
-        creerNouvelEmploye("Charlie", "charlie@entreprise.com");
-        creerNouvelEmploye("David", "david@entreprise.com");
+        creerNouvelEmploye("Djimmoh", "djimmoh20@gmail.com");
+        creerNouvelEmploye("DmD", "dembeledjime83@gmail.com");
     }
 
     // MÉTHODE MODIFIÉE pour centraliser la création et la gestion des ID
